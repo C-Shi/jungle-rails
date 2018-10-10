@@ -1,11 +1,14 @@
 <tr>
   
-  <td>
+  <td colspan="1">
+    <% if category.products.size > 0 && category.products[0].image.url %>
+      <%= image_tag category.products[0].image.url, class: 'cat-img' %>
+    <% end %>
     <h4><%= category.name %></h4>
     <br>
   </td>
 
-  <td>
-    <%= link_to fa_icon('trash'), [:admin, category], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+  <td colspan="1">
+    <h4><%= category.products.size %></h4>
   </td>
 </tr>
