@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-  default from: 'no-reply@jungle.com'
+  default from: 'kyleshi82@gmail.com'
 
   def order_email(order)
     @order = order
