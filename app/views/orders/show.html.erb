@@ -4,6 +4,15 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
+  <h4>Ordered By: <%= @order.email %></h4>
+  <% @order.line_items.each do |item| %>
+    <%= item.product.name %>
+    <%= item.quantity %>
+  <% end %>
+
+  <h3>Total Price: <%= @order.total_cents / 100.0 %></h3>
+
+
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
