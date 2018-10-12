@@ -1,15 +1,17 @@
-<%= form_for [@product, @review], url: "/products/#{@product.id}/reviews" do |form| %>
-          <p>
-            <%= form.label :rating %>
-            <%= form.text_field :rating %>
-          </p>
+<% if session[:user_id] %>
+  <div class="well" id="comment-section">
+  <%= form_for [@product, @review], url: "/products/#{@product.id}/reviews" do |form| %>
+    <%= form.label :description %>
+    <div class="form-group">
+      <%= form.text_area :description, class: "form-control"%>
+    </div>
 
-          <p>
-            <%= form.label :description %>
-            <%= form.text_area :description %>
-          </p>
+    <%= form.label :rating %>
+    <div class="form-group">
+      <%= select_tag 'review[rating]', options_for_select([1,2,3,4,5]), class: "form-control" %>
+    </div>
 
-          <p>
-            <%= form.submit %>
-          </p>
-        <% end %>
+    <%= form.submit "Add Review", class: "btn btn-success btn-sm"%>
+  <% end %>
+  </div>
+<% end %>

@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+  $("#toggle-comment").click(function(){
+    $("#comment-section").slideToggle()
+  })
+})

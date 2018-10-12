@@ -15,3 +15,13 @@ body {
 form.button_to {
   display: inline;
 }
+
+#comment-section {
+  display: none;
+}
+
+#toggle-comment:hover {
+  font-size: 1.2em;
+  transition: font-size .5s;
+  cursor: pointer;
+}
