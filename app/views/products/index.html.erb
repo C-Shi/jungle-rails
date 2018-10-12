@@ -3,7 +3,9 @@
   <header class="page-header">
     <h1>Products</h1>
   </header>
-
+  <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
   <div class="products">
     <%= render @products %>
   </div>
