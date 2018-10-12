@@ -17,6 +17,8 @@ A mini e-commerce application built with Rails 4.2
 * The order page contains items, their image, name, description, quantities and line item totals
 * The final amount for the order is displayed
 * User is not allowed to place order that is more than exisitng quantity
+### Checking Out with Empty Cart
+* Empty Cart cannot be checkout. Instead a warning message will be display
 ### Email Receipt
 * One an order is placed, a confirmation email will be sent to the corresponding email
 ### Product Rating and Review
