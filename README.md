@@ -23,7 +23,7 @@ A mini e-commerce application built with Rails 4.2
 * The final amount for the order is displayed
 * User is not allowed to place order that is more than exisitng quantity
 ![5](./docs/order_detail.png)
-![6](./docs/place_order.dig)
+![6](./docs/place_order.gif)
 ### Checking Out with Empty Cart
 * Empty Cart cannot be checkout. Instead a warning message will be display
 ![7](./docs/empty_cart.png)
