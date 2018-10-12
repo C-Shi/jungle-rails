@@ -1,0 +1,29 @@
+<table class="table table-hover">
+  <colgroup>
+      <col class="col-md-2">
+      <col class="col-md-2">
+      <col class="col-md-6">
+      <col class="col-md-2">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Reviewer</th>
+      <th>Rating</th>
+      <th colspan="2">Reviews</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product.review.each do |review| %>
+      <tr>
+        <td><%= review.user.first_name %> <%= review.user.last_name %></td>
+        <td>
+          <% review.rating.times do %>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <% end %>
+        </td>
+        <td><%= review.description %></td>
+        <td><button>Delete</button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
