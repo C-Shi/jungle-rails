@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
   # handle logout
   def destroy
     session[:user_id] = nil
+    cookies[:cart] = nil
     redirect_to login_path
   end
 
