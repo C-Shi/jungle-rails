@@ -49,4 +49,23 @@ RSpec.describe User, type: :model do
       expect(@user).not_to be_valid
     end
   end
+
+  describe ".authenticate_with_credentials" do
+    it "should pass the test if space exist before or after email present" do 
+      @new_user = {first_name: "Alice", last_name: "Hunter", email: "alice@gmail.com", password: "123456", password_confirmation: "123456"}
+      @user = User.new(@new_user)
+      @user.save
+
+      @login_user = User.authenticate_with_credentials(" alice@gmail.com ", "123456")
+      expect(@user).to eql(@login_user)
+    end
+    it "should pass the test if email case is wrong" do
+      @new_user = {first_name: "Alice", last_name: "Hunter", email: "alice@gmail.com", password: "123456", password_confirmation: "123456"}
+      @user = User.new(@new_user)
+      @user.save
+
+      @login_user = User.authenticate_with_credentials("alIce@GMail.COm", "123456")
+      expect(@user).to eql(@login_user)
+    end
+  end
 end
