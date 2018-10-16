@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "AddToCarts", type: :feature, js:true do
   before :each do
+    @user = User.create! first_name: 'Bob', last_name: 'Smith', email: "Bob@gmail.com", password: "123456", password_confirmation: "123456"
+
     @category = Category.create! name: 'Apparel'
 
     10.times do |n|
@@ -16,7 +18,11 @@ RSpec.feature "AddToCarts", type: :feature, js:true do
   end
 
   scenario "should see cart goes from 0 to 1" do
-    visit root_path
+    visit '/login'
+
+    fill_in "email", with: "Bob@gmail.com"
+    fill_in "password", with: "123456"
+    find("input[name='commit']").click
 
     find("footer form[action='/cart/add_item?product_id=1'] button").click
 
